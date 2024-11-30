@@ -124,3 +124,9 @@ nb-configuration.xml
 
 /results/
 /phpunit*.xml
+
+app/Database/Migrations/*
+!app/Database/Migrations/.gitkeep
+
+app/Database/Seeds/*
+!app/Database/Seeds/.gitkeep
