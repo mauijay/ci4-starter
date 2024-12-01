@@ -29,7 +29,7 @@ Choose one of the following methods to clone the project into your desired folde
 
 **Using Composer:**
 ```bash
-composer create-project simpletine/codeigniter4-starter starter --stability=dev
+composer create-project mauijay/ci4-starter starter --stability=dev
 ```
 
 **Or using Git:**
