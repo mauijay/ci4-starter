@@ -15,7 +15,7 @@ This repository includes:
 ## Features
 
 back end
-tailwind css
+tailwind css (*comming soon)
 Font Awesome
 Access control by Shield
 Dynamic Menu
