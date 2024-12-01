@@ -2,18 +2,23 @@
 namespace Cars\Libraries;
 use Cars\Models\CarsModel;
 class CarsLib {
-  public function __construct()
-  {
-    $config         = config(App::class);
-    $this->response = new Response($config);
-    $this->myCars();
-  }
-  
-  private function myCars() {
-    //
-  }
+  private $token;
 
-  public function requestGet($path, $param = false) {
-    //
-  }
+    public function __construct($token = null){
+        if($token == null){
+                
+            $this->token = bin2hex(random_bytes(16));
+        } else {
+            $this->token = $token;
+        }
+
+    }
+
+    public function getValue(){
+        return $this->token;
+    }
+
+    public function getHash(){
+       return  hash_hmac('sha256', $this->token, $_ENV['HASH_SECRET_KEY']);
+    }
 }

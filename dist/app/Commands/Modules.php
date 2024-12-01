@@ -279,8 +279,8 @@ class Modules extends BaseCommand {
    * 
    * Create directory and set, if required, gitkeep to keep this in git.
    * 
-   * @param type $folder
-   * @param type $gitkeep
+   * @param string $folder
+   * @param string $gitkeep
    * @return string
    */
 
