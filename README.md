@@ -1,9 +1,9 @@
-# CodeIgniter4 Shield Test
+# CodeIgniter4 Starter Kit
 
-[![Official Website](https://img.shields.io/badge/Official_Website-Visit-yellow)](https://simpletine.com)  
-[![YouTube Channel](https://img.shields.io/badge/YouTube_Channel-Subscribe-FF0000)](https://www.youtube.com/channel/UCRuDf31rPyyC2PUbsMG0vZw) 
+[![Official Website](https://img.shields.io/badge/Official_Website-Visit-107516)](https://808.biz)  
+[![YouTube Channel](https://img.shields.io/badge/YouTube_Channel-Subscribe-CC0000)](https://youtube.com/@808biz4?si=kBqv93xorggCujLu)
 
-## Overview
+## Overview ***WORK IN PROGRESS**
 
 This repository provides a starter template for **CodeIgniter 4**, configured to get your application up and running quickly. Follow the instructions below to set up and start developing with CodeIgniter 4.
 
@@ -11,6 +11,15 @@ This repository includes:
 
 - CodeIgniter v4.4.5
 - CodeIgniter Shield v1.1.0
+
+## Features
+
+back end
+tailwind css
+Font Awesome
+Access control by Shield
+Dynamic Menu
+Language Support
 
 ## Requirements
 
@@ -21,13 +30,14 @@ Ensure you have the following installed before starting:
 - **CodeIgniter 4.5.5**
 - **Git**
 
-## How to Use
+## Install Guide
 
 ### 1. Clone the Project
 
 Choose one of the following methods to clone the project into your desired folder:
 
 **Using Composer:**
+
 ```bash
 composer create-project mauijay/ci4-starter starter --stability=dev
 ```
@@ -35,15 +45,17 @@ composer create-project mauijay/ci4-starter starter --stability=dev
 **Or using Git:**
 
 ```bash
-git clone https://github.com/Simpletine/CodeIgniter4-Starter.git starter
+git clone https://github.com/mauijay/ci4-starter.git starter
 ```
 
 **Navigate to the project folder:**
+
 ```bash
 cd starter
 ```
 
 ### 2. Update Dependencies
+
 Run the following commands to update dependencies and copy required files:
 
 ```bash
@@ -53,6 +65,7 @@ cp vendor/codeigniter4/framework/spark spark
 ```
 
 ### 3. Set Up Environment File
+
 Copy the .env file to the root directory:
 
 ```bash
@@ -60,15 +73,17 @@ cp env .env
 ```
 
 ### 4. Start the Application
+
 Run the app using the built-in server. If you want to use a custom port (e.g., 8081), specify it using the --port option:
 
 ```php
 php spark serve --port 8081
 ```
 
-The application should now be accessible at http://localhost:8081.
+The application should now be accessible at <http://localhost:8081>
 
 ## Code Standards and Fixing
+
 This project follows PHP coding standards. To automatically fix coding standard issues, run the following command:
 
 ```php
@@ -76,14 +91,15 @@ composer run fix
 ```
 
 ## Troubleshooting
+
 If you encounter any issues during installation, feel free to open a discussion in the community.
 
 ### Install
 
 ```console
-$ git clone https://github.com/mauijay/ci4-starter.git
-$ cd ci4-starter/
-$ composer install
+git clone https://github.com/mauijay/ci4-starter.git
+cd ci4-starter/
+composer install
 ```
 
 ### Create Database
@@ -97,19 +113,19 @@ GRANT ALL PRIVILEGES ON ci4_starter.* TO dbuser@localhost;
 ### Configure
 
 ```console
-$ cp env.sample .env
+cp env.sample .env
 ```
 
 ### Run Database Migration
 
 ```console
-$ php spark migrate --all
+php spark migrate --all
 ```
 
 ### Run Development Server
 
 ```console
-$ php spark serve
+php spark serve
 ```
 
 ### How to Test JSON Web Token (JWT) Authentication
@@ -769,5 +785,5 @@ filter | group permission toolbar |
 
 ## References
 
-- https://github.com/codeigniter4/CodeIgniter4
-- https://github.com/codeigniter4/shield
+- <https://github.com/codeigniter4/CodeIgniter4>
+- <https://github.com/codeigniter4/shield>
