@@ -81,17 +81,17 @@ If you encounter any issues during installation, feel free to open a discussion 
 ### Install
 
 ```console
-$ git clone https://github.com/kenjis/ci4-shield-test.git
-$ cd ci4-shield-test/
+$ git clone https://github.com/mauijay/ci4-starter.git
+$ cd ci4-starter/
 $ composer install
 ```
 
 ### Create Database
 
 ```mysql
-CREATE DATABASE `ci_shield` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE `ci4_starter` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 CREATE USER dbuser@localhost IDENTIFIED WITH mysql_native_password BY 'dbpasswd';
-GRANT ALL PRIVILEGES ON ci_shield.* TO dbuser@localhost;
+GRANT ALL PRIVILEGES ON ci4_starter.* TO dbuser@localhost;
 ```
 
 ### Configure
@@ -123,7 +123,7 @@ Navigate to <http://localhost:8080/register>.
 ```console
 $ curl --location 'http://localhost:8080/auth/jwt' \
 --header 'Content-Type: application/json' \
---data-raw '{"email" : "jay@808.biz" , "password" : "Sales99bonfire?"}'
+--data-raw '{"email" : "dbuser@808biz.com" , "password" : "dbpasswd"}'
 ```
 
 ```console
