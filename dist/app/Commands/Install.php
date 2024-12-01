@@ -106,14 +106,14 @@ class Install extends BaseCommand {
       CLI::write(CLI::color('Samples data inserted', 'green'));
     } catch (\Exception $e) {
       CLI::write(CLI::color('Samples data could not be inserted.', 'red'));
-    }    
+    }
     try {
       $seeder->call('Blogs\Database\Seeds\BlogSeeder');
       CLI::write(CLI::color('Sample Blog Articles inserted', 'green'));
     } catch (\Exception $e) {
       CLI::write(CLI::color('Sample Blog Articles could not be inserted.', 'red'));
     }
-      
+
   }
 
   /**
@@ -164,7 +164,7 @@ class Install extends BaseCommand {
     $users->save($user);
     $user = $users->findById($users->getInsertID());
     $user->activate();
-    $user->addGroup('superadmin');    
+    $user->addGroup('superadmin');
     CLI::write(CLI::color('Admin created', 'green'));
     CLI::write(CLI::color('You can now log in to the website with your credentials', 'green'));
     CLI::write(CLI::color('E-Mail: ' . $email, 'blue'));

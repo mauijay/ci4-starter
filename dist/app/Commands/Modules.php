@@ -5,8 +5,7 @@ namespace App\Commands;
 use CodeIgniter\CLI\BaseCommand;
 use CodeIgniter\CLI\CLI;
 
-class Modules extends BaseCommand
-{
+class Modules extends BaseCommand {
   /**
    * The Command's Group
    *
@@ -94,7 +93,7 @@ class Modules extends BaseCommand
     $module_folder = 'Modules';
     //$this->module_folderOrig   = $module_folder?ucfirst($module_folder):basename(APPPATH).DIRECTORY_SEPARATOR.'Modules'; // change this to root path
     $this->module_folderOrig = ucfirst($module_folder); // change this to root path
-    $this->module_folder = APPPATH . '..' . DIRECTORY_SEPARATOR . $this->module_folderOrig;
+    $this->module_folder     = APPPATH . '..' . DIRECTORY_SEPARATOR . $this->module_folderOrig;
     if (!is_dir($this->module_folder)) {
       mkdir($this->module_folder);
     }
@@ -133,14 +132,14 @@ class Modules extends BaseCommand
   }
 
   /**
-  * Create Config File
-  */
+   * Create Config File
+   */
   protected function createConfig()
   {
     $configPath = $this->createDir('Config');
     if (!file_exists($configPath . '/Routes.php')) {
       $routeName = strtolower($this->module_name);
-      $template = "<?php
+      $template  = "<?php
         if(!isset(\$routes))
         { 
             \$routes = \Config\Services::routes(true);
@@ -248,13 +247,13 @@ class Modules extends BaseCommand
       CLI::error("Library already exists!");
     }
   }
- 
+
   protected function createView()
   {
     $viewPath = $this->createDir('Views');
     if (!file_exists($viewPath . DIRECTORY_SEPARATOR . 'index.php')) {
       $routeName = strtolower($this->module_name);
-      $template = '<section><h1>' . strtolower($routeName) . ' module</h1><br><p>This is the new index page</p></section>';
+      $template  = '<section><h1>' . strtolower($routeName) . ' module</h1><br><p>This is the new index page</p></section>';
       file_put_contents($viewPath . DIRECTORY_SEPARATOR . 'index.php', $template);
     } else {
       CLI::error("Index view already exists!");
@@ -321,7 +320,7 @@ class Modules extends BaseCommand
     $newcontent = '';
     $posfound   = false;
     $posline    = 0;
- 
+
     /* $psr4Add = " ' " . ucfirst($this->module_name) . "' => " . 'ROOTPATH . ' . "'Modules\\" . ucfirst($this->module_name) . "',"; */
     $psr4Add = "        '" . ucfirst($this->module_name) . "'    => " . 'ROOTPATH . ' . "'Modules/" . ucfirst($this->module_name) . "',";
     /*
@@ -331,7 +330,7 @@ class Modules extends BaseCommand
         $psr4Add = "                '".ucfirst($this->module_name) . "' => ". 'ROOTPATH . ' . "'".$this->module_folderOrig."\\" . ucfirst($this->module_name)."',";
     }
     */
- 
+
     while (($buffer = fgets($file, 4096)) !== false) {
       if ($posfound && strpos($buffer, ']')) {
         //Last line of $psr4
@@ -351,7 +350,7 @@ class Modules extends BaseCommand
       }
       $newcontent .= $buffer;
     }
- 
+
     $file = fopen(APPPATH . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'Autoload.php', 'w');
     if (!$file) {
       CLI::error("Config/Autoload.php not writable!");
@@ -360,8 +359,8 @@ class Modules extends BaseCommand
     fwrite($file, $newcontent);
     fclose($file);
 
-    return true; 
-   }
+    return true;
+  }
 
 
 }

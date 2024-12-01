@@ -43,7 +43,8 @@ class Autoload extends AutoloadConfig
         APP_NAMESPACE => APPPATH,
         'Blogs'       => ROOTPATH . 'Modules/Blog',        
         'Jelly'       => ROOTPATH . 'Modules/Jelly',
-        'Peanut'      => ROOTPATH . 'Modules/Peanut'
+        'Peanut'      => ROOTPATH . 'Modules/Peanut',
+        'Cars'    => ROOTPATH . 'Modules/Cars',
     ];
 
     /**
